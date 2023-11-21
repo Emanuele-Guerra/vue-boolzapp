@@ -164,16 +164,18 @@ createApp({
                         status: 'received'
                     }
                 ],
-                selectedUser: 
+                
             }
-        ]
-      
+        ],
+        selectedUser: null
     }
     
   },
   methods: {
     userSelection(){
-
+        
+        console.log(this.selectedUser)
+        
     }
 
 
