@@ -13,14 +13,42 @@
             <div id="right-sub">
                 <div id="r-header"></div>
                 <div id="notice-bar"></div>
-                <div id="search-bar"></div>
-                <div id="contacts"></div>
+                <div id="search-bar">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <div id="contacts">
+                    <div v-for="i in contacts" class="user">
+                        <div id="img-wrapper">
+                            <img  :src="i.avatar" alt="">
+                        </div>
+                        <div id="name-msg">
+                            <h4>{{i.name}}</h4>
+                            <p>Ultimo messaggio inviato</p>
+                        </div>
+                        <div id="hourMsg">
+                            <p>12:00</p>
+                        </div>
+                    </div>
+                </div>
                 
             </div>
            <!-- divisione tra sub container  -->
             <div id="left-sub">
-                <div id="l-header"></div>
-                <div id="message-container"></div>
+                <div id="l-header">
+                    <div>
+                        
+                    </div>
+                </div>
+                <div id="message-container">
+                    <div class="user-message">
+                        <p></p>
+                    </div>
+                    <div class="received-message">
+                        <p></p>
+                    </div>
+                    
+
+                </div>
                 <div id="m-input-container"></div>
 
 
