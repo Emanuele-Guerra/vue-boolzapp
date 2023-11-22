@@ -11,20 +11,38 @@
 <body>
     <div id="app">
         <div id="main-container">
-            <div id="right-sub">
-                <div id="r-header"></div>
-                <div id="notice-bar"></div>
+            <div id="left-sub">
+                <div id="l-header">
+                    <div class="head-wrap">
+                        <img src="img/33204321.png" alt="">
+                    </div>
+                    
+                    <div>
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <div id="notice-bar">
+                    <div id="bell-icon">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div>
+                        <h5>Ricevi notifiche di ogni messaggio</h5>
+                        <a href="">Attiva notifiche desktop</a>
+                    </div>
+                </div>
                 <div id="search-bar">
                     <div><i class="fa-solid fa-magnifying-glass fa-rotate-90"></i></div>
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div id="contacts">
-                    <div @click="userSelection()" v-for="selectedUser in contacts" class="user">
+                    <div @click="userSelection(i)" v-for="user, i in contacts" class="user">
                         <div id="img-wrapper">
-                            <img  :src="selectedUser.avatar" alt="">
+                            <img  :src="user.avatar" alt="">
                         </div>
                         <div id="name-msg">
-                            <h4>{{(selectedUser).name}}</h4>
+                            <h5>{{user.name}}</h5>
                             <p>Ultimo messaggio inviato</p>
                         </div>
                         <div id="hourMsg">
@@ -35,10 +53,15 @@
                 
             </div>
            <!-- divisione tra sub container  -->
-            <div id="left-sub">
-                <div id="l-header">
+            <div id="right-sub">
+                <div id="r-header">
                     <div>
                         <img src="" alt="">
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
                 <div id="message-container">
@@ -51,7 +74,17 @@
                     
 
                 </div>
-                <div id="m-input-container"></div>
+                <div id="m-input-container">
+                    <div id="emoji">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <div id="foot-input-container">
+                        <input type="text" placeholder="Scrivi un messaggio">
+                    </div>
+                    <div id="rec">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </div>
 
 
                     

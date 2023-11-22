@@ -167,14 +167,14 @@ createApp({
                 
             }
         ],
-        selectedUser: null
+        selectedUser: 0
     }
     
   },
   methods: {
-    userSelection(){
+    userSelection(n){
         
-        console.log(this.selectedUser)
+        console.log(this.user)
         
     }
 
