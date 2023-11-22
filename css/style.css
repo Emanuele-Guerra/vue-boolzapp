@@ -5,6 +5,9 @@
     font-family: sans-serif;
     
 }
+h5{
+    font-weight: 600;
+}
 body{
     background-image: url(../img/e8d94e1e8b6b530ad315e9385290141b.jpg);
     background-size: contain;
@@ -16,6 +19,7 @@ body{
     margin: 2.5% auto;
     border: 1px solid rgb(210, 210, 210);
     background-color: white;
+    
 }
 #left-sub{
     display: flex;
@@ -23,6 +27,7 @@ body{
     width: 30%;
     height: 100%;
     border-right: 1px solid rgb(210, 210, 210);
+    
 }
 #right-sub{
     display: flex;
@@ -73,7 +78,14 @@ body{
     font-size: 20px;
     margin: 0.5rem;
 }
-#message-container{
+#r-header img{
+    display: inline;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.message-container{
     width: 100%;
     height: calc(90vh - 120px);
     background-image: url(../img/mine.jpg);
@@ -202,4 +214,10 @@ body{
     background-color: #ffffff;
     border-radius: 10px;
     margin: 0.25rem;
+}
+.rh-inline{
+    margin-right: auto;
+}
+.rh-inline p{
+    font-size: 10px;
 }

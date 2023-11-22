@@ -167,17 +167,18 @@ createApp({
                 
             }
         ],
-        selectedUser: 0
+        userID: 0
     }
     
   },
   methods: {
-    userSelection(n){
+    userSelection(number){
         
-        console.log(this.user)
-        
+       this.userID = number;
+       console.log(this.userID)
     }
 
 
   }
+  
 }).mount('#app')

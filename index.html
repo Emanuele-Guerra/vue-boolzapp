@@ -37,7 +37,7 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div id="contacts">
-                    <div @click="userSelection(i)" v-for="user, i in contacts" class="user">
+                    <div @click="userSelection(i)" v-for="(user, i) in contacts" class="user">
                         <div id="img-wrapper">
                             <img  :src="user.avatar" alt="">
                         </div>
@@ -56,7 +56,12 @@
             <div id="right-sub">
                 <div id="r-header">
                     <div>
-                        <img src="" alt="">
+                        <img :src="contacts[userID].avatar" alt="">
+                    </div>
+                    <div class="rh-inline">
+                        <h5>{{contacts[userID].name}}</h5>
+                        <p>Ultimo accesso oggi alle ore 12:00</p>
+
                     </div>
                     <div>
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -64,13 +69,14 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div id="message-container">
-                    <div class="user-message">
-                        <p></p>
+                <div class="message-container">
+                    <div v-for="mex in contacts[userID].messages" :class="mex.status=='received' ? 'received-message' : 'user-message'">
+                        <p>{{mex.message}}</p>
+                        
                     </div>
-                    <div class="received-message">
-                        <p></p>
-                    </div>
+                    
+                        
+                    
                     
 
                 </div>
