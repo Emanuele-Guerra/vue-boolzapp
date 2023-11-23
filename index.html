@@ -37,7 +37,7 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div id="contacts">
-                    <div @click="userSelection(i)" v-for="(user, i) in contacts" class="user">
+                    <div @click="userSelection(i)" v-for="(user, i) in contacts" id="user" v-show="user.visible">
                         <div id="img-wrapper">
                             <img  :src="user.avatar" alt="">
                         </div>
@@ -71,9 +71,13 @@
                 </div>
                 <div class="message-container">
                     <div v-for="mex in contacts[userID].messages" :class="mex.status=='received' ? 'received-message' : 'user-message'">
-                        <p>{{mex.message}}</p>
-                        
-                    </div>
+                        <div>
+                            <p>{{mex.message}}</p>
+                        </div>
+                        <div>
+                            <p>{{mex.date}}</p>
+                        </div>
+                    </div> 
                     
                         
                     
@@ -85,7 +89,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div id="foot-input-container">
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="textInsert" v-model="inputMsg">
                     </div>
                     <div id="rec">
                         <i class="fa-solid fa-microphone"></i>

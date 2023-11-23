@@ -1,8 +1,8 @@
 const { createApp } = Vue
 
 createApp({
-  data() {
-    return {
+    data() {
+        return {
         contacts: [
             {
                 name: 'Michele',
@@ -167,18 +167,42 @@ createApp({
                 
             }
         ],
-        userID: 0
+        selected: "user-active",
+        userID: 0,
+        inputMsg:""
+        
     }
     
-  },
-  methods: {
+},
+methods: {
     userSelection(number){
         
-       this.userID = number;
-       console.log(this.userID)
+        this.userID = number;
+        console.log(this.userID)
+    },
+    textInsert(){
+        this.contacts[this.userID].messages.push({
+            date:"",
+            message: this.inputMsg,
+            status: "sent",
+            
+        })
+        console.log(this.inputMsg)
+
+        setTimeout(() => {
+            this.getAnAnswer();
+        }, 1000); 
+    },
+    getAnAnswer(){
+        this.contacts[this.userID].messages.push({
+            date: "",
+            message: "OOOOK!!!!!",
+            status: "received"
+        })
     }
-
-
-  }
+    
+    
+},
+  
   
 }).mount('#app')
