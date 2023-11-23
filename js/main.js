@@ -185,20 +185,25 @@ methods: {
             date:"",
             message: this.inputMsg,
             status: "sent",
-            
         })
-        console.log(this.inputMsg)
-
+        console.log(this.inputMsg);
+        this.inputMsg="" 
+        
         setTimeout(() => {
             this.getAnAnswer();
         }, 1000); 
     },
     getAnAnswer(){
-        this.contacts[this.userID].messages.push({
-            date: "",
-            message: "OOOOK!!!!!",
-            status: "received"
-        })
+        this.currentChat = this.contacts[this.userID];
+        if(this.currentChat){
+            this.currentChat.messages.push({
+                date:"",
+                message: "OK!",
+                status: "received",
+            })
+        }
+
+        
     }
     
     
